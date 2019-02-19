@@ -1337,8 +1337,8 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id' => 'pjax-loader',
 						'type'	=> 'switch',
-						'title'	=> __('SmoothStateJS Instant Loader', 'redux-framework-demo'),
-						'subtitle'	=> __('Turns on SmoothStateJS for a PJAX/AJAX styled fast page by page load. Be warned in using this in conjuction with WooCommerce Cart and Checkout pages.', 'redux-framework-demo'),
+						'title'	=> __('BarbaJS Instant Loader', 'redux-framework-demo'),
+						'subtitle'	=> __('Turns on BarbaJS for a PJAX/AJAX styled fast page by page load. Be warned in using this in conjuction with WooCommerce Cart and Checkout pages.', 'redux-framework-demo'),
 						'desc'	=> __('', 'redux-framework-demo'),
 						'default' => false
 					),

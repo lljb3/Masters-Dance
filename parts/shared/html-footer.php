@@ -10,7 +10,8 @@
 <?php echo $custom_scripts; ?>
 
 <?php if( $hmd_theme_option['pjax-loader'] ) : ?>
-	<!-- End SmoothStateJS -->
+	<!-- End BarbaJS -->
+		</div>
 	</div>
 <?php endif; ?>
 

@@ -53,6 +53,7 @@
 <div id="app">
 
 <?php if( $hmd_theme_option['pjax-loader'] ) : ?>
-	<!-- Start SmoothStateJS -->
-	<div id="smoothstate-container">
+	<!-- Start BarbaJS -->
+	<div id="barba-warpper">
+		<div class="barba-container">
 <?php endif; ?>

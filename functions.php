@@ -1,7 +1,7 @@
 <?php
 	/**
 	 * Starkers functions and definitions
-	 * Rewritten for Kake HMD Corporate Full Theme
+	 * Rewritten for Kake HMD Master's Dance Theme
 	 * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
 	 *
  	 * @package WordPress

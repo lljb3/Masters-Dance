@@ -1,25 +1,25 @@
 <?php 
-	global $corp_theme_option;
-	$copyright = $corp_theme_option['copyright'];
-	$dev_name = $corp_theme_option['developer-text'];
-	$dev_link = $corp_theme_option['developer-link'];
-	$facebook = $corp_theme_option['social-facebook'];
-	$twitter = $corp_theme_option['social-twitter'];
-	$google = $corp_theme_option['social-google'];
-	$linkedin = $corp_theme_option['social-linkedin'];
-	$pinterest = $corp_theme_option['social-pinterest'];
-	$instagram = $corp_theme_option['social-instagram'];
-	$youtube = $corp_theme_option['social-youtube'];
-	$skype = $corp_theme_option['social-skype'];
-	$yelp = $corp_theme_option['social-yelp'];
+	global $hmd_theme_option;
+	$copyright = $hmd_theme_option['copyright'];
+	$dev_name = $hmd_theme_option['developer-text'];
+	$dev_link = $hmd_theme_option['developer-link'];
+	$facebook = $hmd_theme_option['social-facebook'];
+	$twitter = $hmd_theme_option['social-twitter'];
+	$google = $hmd_theme_option['social-google'];
+	$linkedin = $hmd_theme_option['social-linkedin'];
+	$pinterest = $hmd_theme_option['social-pinterest'];
+	$instagram = $hmd_theme_option['social-instagram'];
+	$youtube = $hmd_theme_option['social-youtube'];
+	$skype = $hmd_theme_option['social-skype'];
+	$yelp = $hmd_theme_option['social-yelp'];
 ?>
 	
-<?php if ( $corp_theme_option['footer-show-up-button'] ) { ?>
+<?php if ( $hmd_theme_option['footer-show-up-button'] ) { ?>
 	<!-- Back to Top -->
 	<a data-scroll href="#totop" class="totop fadeOut"><span class="fas fa-caret-up"></span></a>
 <?php } ?>
 
-<?php if ( $corp_theme_option['footer-sitemap'] ) { ?>
+<?php if ( $hmd_theme_option['footer-sitemap'] ) { ?>
 	<!-- Sitemap Information -->
 	<div class="container-fluid" id="footer-sitemap">
 		<div class="row">

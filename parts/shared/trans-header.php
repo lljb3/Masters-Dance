@@ -1,13 +1,13 @@
 <?php
-	global $corp_theme_option;
-	if ( !empty( $corp_theme_option['logo-menu'] ) ) {
-		$logo = $corp_theme_option['logo-menu']['url'];
+	global $hmd_theme_option;
+	if ( !empty( $hmd_theme_option['logo-menu'] ) ) {
+		$logo = $hmd_theme_option['logo-menu']['url'];
     }
-    if ( !empty( $corp_theme_option['trans-header-logo'] ) ) {
-		$trans_logo = $corp_theme_option['trans-header-logo']['url'];
+    if ( !empty( $hmd_theme_option['trans-header-logo'] ) ) {
+		$trans_logo = $hmd_theme_option['trans-header-logo']['url'];
 	}
-    $chat = $corp_theme_option['site-header-chat'];
-    $phone = $corp_theme_option['site-header-phone'];
+    $chat = $hmd_theme_option['site-header-chat'];
+    $phone = $hmd_theme_option['site-header-phone'];
 ?>
 
 <!-- Header Information -->

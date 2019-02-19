@@ -1,11 +1,11 @@
 <?php
-	global $corp_theme_option;
-	if ( !empty( $corp_theme_option['logo-menu'] ) ) {
-		$logo = $corp_theme_option['logo-menu']['url'];
+	global $hmd_theme_option;
+	if ( !empty( $hmd_theme_option['logo-menu'] ) ) {
+		$logo = $hmd_theme_option['logo-menu']['url'];
 	}
-    $chat = $corp_theme_option['site-header-chat'];
-    $chat_click = $corp_theme_option['site-header-chat-click'];
-    $phone = $corp_theme_option['site-header-phone'];
+    $chat = $hmd_theme_option['site-header-chat'];
+    $chat_click = $hmd_theme_option['site-header-chat-click'];
+    $phone = $hmd_theme_option['site-header-phone'];
 ?>
 
 <!-- Header Information -->

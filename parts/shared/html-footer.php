@@ -1,6 +1,6 @@
 <?php
-	global $corp_theme_option;
-	$custom_scripts = $corp_theme_option['custom-scripts'];
+	global $hmd_theme_option;
+	$custom_scripts = $hmd_theme_option['custom-scripts'];
 ?>
 
 <!-- File Calls -->
@@ -9,7 +9,7 @@
 <!-- Custom JavaScript -->
 <?php echo $custom_scripts; ?>
 
-<?php if( $corp_theme_option['pjax-loader'] ) : ?>
+<?php if( $hmd_theme_option['pjax-loader'] ) : ?>
 	<!-- End SmoothStateJS -->
 	</div>
 <?php endif; ?>

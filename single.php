@@ -8,10 +8,10 @@
      * @subpackage 	Starkers
      * @since 		Starkers 4.0
      */
-    global $corp_theme_option; 
-    $trans_opt = $corp_theme_option['transitional-header-button'];
+    global $hmd_theme_option; 
+    $trans_opt = $hmd_theme_option['transitional-header-button'];
     $trans_page_opt = get_post_meta($post->ID,'page_options_trans-header',true);
-    $collapse_opt = $corp_theme_option['collapsable-header-button'];
+    $collapse_opt = $hmd_theme_option['collapsable-header-button'];
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header' ) ); ?>
 

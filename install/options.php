@@ -12,9 +12,9 @@
 	function tt_custom_login() {
 		// Login Page Logo
 		$output  = '<style type="text/css">';
-			global $corp_theme_option;
-			$login_logo = $corp_theme_option['logo-login']['url'];
-			$background_login = $corp_theme_option['background-login'];
+			global $hmd_theme_option;
+			$login_logo = $hmd_theme_option['logo-login']['url'];
+			$background_login = $hmd_theme_option['background-login'];
 			if ( !empty( $login_logo ) ) {
 				$output .= '.login h1 a { background: url(' . $login_logo . ') 50% 50% no-repeat !important; width: auto; }';
 			}
@@ -118,20 +118,20 @@
 		Custom Styles
 	======================== */
 	function tt_custom_styles() {
-		global $corp_theme_option;
-		$opacity = $corp_theme_option['opacity-slider'];
+		global $hmd_theme_option;
+		$opacity = $hmd_theme_option['opacity-slider'];
 		// Content Buttons
-		$btn_bg = $corp_theme_option['color-content-link'];
-		$btn_bg_hover = $corp_theme_option['color-content-link'];
-		$btn_text = $corp_theme_option['color-content-link'];
-		$btn_text_hover = $corp_theme_option['color-button-text'];
+		$btn_bg = $hmd_theme_option['color-content-link'];
+		$btn_bg_hover = $hmd_theme_option['color-content-link'];
+		$btn_text = $hmd_theme_option['color-content-link'];
+		$btn_text_hover = $hmd_theme_option['color-button-text'];
 		// Read More Buttons
-		$read_more_bg = $corp_theme_option['color-blog-posts-read-more-bg'];
-		$read_more_bg_hover = $corp_theme_option['color-blog-posts-read-more-bg-hover'];
-		$read_more_text = $corp_theme_option['color-blog-posts-read-more-text'];
-		$read_more_text_hover = $corp_theme_option['color-blog-posts-read-more-text-hover'];
+		$read_more_bg = $hmd_theme_option['color-blog-posts-read-more-bg'];
+		$read_more_bg_hover = $hmd_theme_option['color-blog-posts-read-more-bg-hover'];
+		$read_more_text = $hmd_theme_option['color-blog-posts-read-more-text'];
+		$read_more_text_hover = $hmd_theme_option['color-blog-posts-read-more-text-hover'];
 		// Custom Styles
-		$custom_styles = $corp_theme_option['custom-styles'];
+		$custom_styles = $hmd_theme_option['custom-styles'];
 		$style_type = 'type="text/css"';
 		
 		echo '<style '. $style_type .'>';

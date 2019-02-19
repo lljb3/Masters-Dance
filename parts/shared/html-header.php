@@ -1,7 +1,7 @@
 <?php
-	global $corp_theme_option;
-	if ( !empty( $corp_theme_option['favicon'] ) ) {
-		$favicon = $corp_theme_option['favicon']['url'];
+	global $hmd_theme_option;
+	if ( !empty( $hmd_theme_option['favicon'] ) ) {
+		$favicon = $hmd_theme_option['favicon']['url'];
 	}
 	else {
 		$favicon = '';
@@ -52,7 +52,7 @@
 <!-- Start App -->
 <div id="app">
 
-<?php if( $corp_theme_option['pjax-loader'] ) : ?>
+<?php if( $hmd_theme_option['pjax-loader'] ) : ?>
 	<!-- Start SmoothStateJS -->
 	<div id="smoothstate-container">
 <?php endif; ?>

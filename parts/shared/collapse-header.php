@@ -1,22 +1,22 @@
 <?php
-	global $corp_theme_option;
-	if ( !empty( $corp_theme_option['logo-menu'] ) ) {
-		$logo = $corp_theme_option['logo-menu']['url'];
+	global $hmd_theme_option;
+	if ( !empty( $hmd_theme_option['logo-menu'] ) ) {
+		$logo = $hmd_theme_option['logo-menu']['url'];
 	}
-    $chat = $corp_theme_option['site-header-chat'];
-    $chat_click = $corp_theme_option['site-header-chat-click'];
-    $phone = $corp_theme_option['site-header-phone'];
-    $copyright = $corp_theme_option['copyright'];
-    $dev_name = $corp_theme_option['developer-text'];
-	$dev_link = $corp_theme_option['developer-link'];
-	$facebook = $corp_theme_option['social-facebook'];
-	$twitter = $corp_theme_option['social-twitter'];
-    $google = $corp_theme_option['social-google'];
-	$youtube = $corp_theme_option['social-youtube'];
-    $instagram = $corp_theme_option['social-instagram'];
-	$soundcloud = $corp_theme_option['social-soundcloud'];
-    $bandcamp = $corp_theme_option['social-bandcamp'];
-	$apple = $corp_theme_option['social-apple'];
+    $chat = $hmd_theme_option['site-header-chat'];
+    $chat_click = $hmd_theme_option['site-header-chat-click'];
+    $phone = $hmd_theme_option['site-header-phone'];
+    $copyright = $hmd_theme_option['copyright'];
+    $dev_name = $hmd_theme_option['developer-text'];
+	$dev_link = $hmd_theme_option['developer-link'];
+	$facebook = $hmd_theme_option['social-facebook'];
+	$twitter = $hmd_theme_option['social-twitter'];
+    $google = $hmd_theme_option['social-google'];
+	$youtube = $hmd_theme_option['social-youtube'];
+    $instagram = $hmd_theme_option['social-instagram'];
+	$soundcloud = $hmd_theme_option['social-soundcloud'];
+    $bandcamp = $hmd_theme_option['social-bandcamp'];
+	$apple = $hmd_theme_option['social-apple'];
 ?>
 
 <!-- Header Information -->

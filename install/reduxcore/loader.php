@@ -1,5 +1,5 @@
 <?php
-	$redux_opt_name = 'corp_theme_option';
+	$redux_opt_name = 'hmd_theme_option';
 
 	if ( ! function_exists( 'redux_register_custom_extension_loader' ) ) {
 		function redux_register_custom_extension_loader( $ReduxFramework ) {

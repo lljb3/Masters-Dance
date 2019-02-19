@@ -334,7 +334,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 			/* ==============================
 				Header
 			============================== */
-			$corp_options = get_option('corp_theme_option');
+			$corp_options = get_option('hmd_theme_option');
 			$this->sections[] = array(
 	            'title'     => __('Header', 'redux-framework-demo'),
 	            'desc'      => __('The header. Make sure to double check every section.', 'redux-framework-demo'),
@@ -1821,7 +1821,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
             $theme = wp_get_theme();							// For use with some settings. Not necessary.
             $this->args = array(
                 // TYPICAL -> Change these values as you need/desire
-                'opt_name'          => 'corp_theme_option',		// This is where your data is stored in the database and also becomes your global variable name.
+                'opt_name'          => 'hmd_theme_option',		// This is where your data is stored in the database and also becomes your global variable name.
                 'display_name'      => $theme->get('Name'),     // Name that appears at the top of your panel
                 'display_version'   => $theme->get('Version'),  // Version that appears at the top of your panel
                 'menu_type'         => 'submenu',               // Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
@@ -1847,7 +1847,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
                 'menu_icon'         => '',                      // Specify a custom URL to an icon
                 'last_tab'          => '',                      // Force your panel to always open to a specific tab (by id)
                 'page_icon'         => 'icon-themes',           // Icon displayed in the admin panel next to your menu_title
-                'page_slug'         => 'corp_theme_options',              // Page slug used to denote the panel
+                'page_slug'         => 'hmd_theme_options',              // Page slug used to denote the panel
                 'save_defaults'     => true,                    // On load save the defaults to DB before user clicks save or not
                 'default_show'      => false,                   // If true, shows the default value next to each field that is not the default value.
                 'default_mark'      => '',                      // What to print by the field's title if the value shown is default. Suggested: *

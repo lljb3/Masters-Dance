@@ -18,6 +18,9 @@
 			/* React Component JS */
 			wp_enqueue_script( 'reactcomjs', $app_base . '/app.js', array('jquery'), null, true );
 
+			/* Barba JS */
+			wp_enqueue_script( 'barbajs', $app_base . '/lib/barba.js', array('jquery'), null, true );
+
 			/* Smooth Scroll JS */
 			wp_enqueue_script( 'smoothscrolljs', $app_base . '/lib/smooth-scroll.polyfills.js', array('jquery'), null, true );
 

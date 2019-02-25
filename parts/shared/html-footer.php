@@ -13,6 +13,7 @@
 	<!-- End BarbaJS -->
 		</div>
 	</div>
+	<?php include_once( __DIR__ . '/../dynamic/barbajs.php' ); ?>
 <?php endif; ?>
 
 <!-- End App -->

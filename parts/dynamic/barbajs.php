@@ -26,12 +26,6 @@
         Barba.Pjax.getTransition = function() {
             return FadeTransition;
         };
-        Barba.Dispatcher.on('linkClicked', function(oldContainer) {
-            setTimeout(killSlider);
-        });
-        Barba.Dispatcher.on('transitionCompleted', function(newContainer) {
-            setTimeout(startSlider);
-        });
         var BarbaContainer = Barba.BaseView.extend({
             namespace: 'barba-container',
             onLeave: function() {

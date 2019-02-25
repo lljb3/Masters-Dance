@@ -558,17 +558,6 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						),
 					),
 					array(
-						'id'	=> 'color-collapsable-header',
-						'type'	=> 'color',
-						'required' => array('collapsable-header-button', 'equals', true),
-						'title'	=> __('Collapsable Header Color', 'redux-framework-demo'), 
-						'subtitle'	=> __('Collapsable Header Color (default: #ffffff)', 'redux-framework-demo'),
-						'default'	=> '#ffffff',
-						'output' => array('#collapse-menu'),
-						'validate'	=> 'color',
-						'transparent'	=> false,
-					),
-					array(
 						'id'	=> 'typography-collapsable-header',
 						'type'	=> 'typography',
 						'required' => array('collapsable-header-button', 'equals', true),
@@ -589,7 +578,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'color'	=> true,
 						//'preview'	=> false, // Disable the previewer
 						'all_styles' => true, // Enable all Google Font style/weight variations to be added to the page
-						'output' => array('#collapse-menu,#panel-navbar-collapse'), // An array of CSS selectors to apply this font style to dynamically
+						'output' => array('#collapse-menu,#panel-navbar-collapse,#collapse-menu p,#panel-navbar-collapse p'), // An array of CSS selectors to apply this font style to dynamically
 						'units'	=> 'px', // Defaults to px
 						'subtitle'	=> __('', 'redux-framework-demo'),
 						'default'	=> array(
@@ -1619,12 +1608,12 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'text-align'	=> false,
 						'text-transform' => true,
 						//'subsets'	=> false, // Only appears if google is true and subsets not set to false
-						'font-size'	=> false,
-						'line-height' => false,
+						'font-size'	=> true,
+						'line-height' => true,
 						'word-spacing' => true, // Defaults to false
 						'letter-spacing' => true, // Defaults to false
 						'color'	=> true,
-						//'preview'	=> false, // Disable the previewer
+						'preview'	=> true, // Disable the previewer
 						'all_styles' => false, // Enable all Google Font style/weight variations to be added to the page
 						'output' => array('#footer-container,#footer-sitemap'), // An array of CSS selectors to apply this font style to dynamically
 						'units'	=> 'px', // Defaults to px

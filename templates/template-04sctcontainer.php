@@ -40,12 +40,12 @@
     <?php endif; ?>
 <?php endif; ?>
 
-<?php if ( $slider_opt == 1 ) { ?> 
+<?php if ( $slider_opt == 'on' && is_page( 'home' ) ) : ?> 
     <!-- Jumbotron Information -->
     <div class="jumbotron" id="home">
         <div class="slider-text container-fluid">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
+            <div class="row" id="slider-text-inner">
+                <div class="col-lg-10 offset-lg-1" id="slider-text-content">
                     <?php 
                         $slidertitle = get_post_meta($post->ID, "slidermeta-text", true); 
                         $sliderimage = get_post_meta($post->ID, "slidermeta-image", true); 
@@ -75,19 +75,19 @@
                     ?>
                         <a href="<?php echo $sliderlink; ?>" class="btn btn-lg button-success"><?php echo $sliderbutton; ?></a>
                     <?php } ?>
-                    <div class="down-arrow">
-                        <?php $scrdwnimg = $hmd_theme_option['scroll-down-icon-image']['url']; $scrdwnicon = $hmd_theme_option['scroll-down-icon-html']; $scrdwntxt = $hmd_theme_option['scroll-down-text']; $scrdwnline = $hmd_theme_option['scroll-down-line']; ?>
-                        <?php if( !empty( $scrdwnimg ) && empty( $scrdwnicon ) ) { ?>
-                            <a href="#section-container" data-scroll><img src="<?php echo $scrdwnimg ?>" alt="" /></a><br />
-                        <?php } elseif( !empty( $scrdwnicon ) ) { ?>
-                            <a href="#section-container" data-scroll><i class="<?php echo $scrdwnicon ?>"></i></a>
-                        <?php } if( !empty( $scrdwntxt ) ) { ?>
-                            <a href="#section-container" class="scroll-text" data-scroll><span><?php echo $scrdwntxt; ?></span></a><br />
-                        <?php } if( ( $scrdwnline ) ) { ?>
-                            <span class="line"></span>
-                        <?php } ?>
-                    <!-- end .down-arrow --></div>
                 <!-- end .col-lg-10 --></div>
+                <div class="down-arrow">
+                    <?php $scrdwnimg = $hmd_theme_option['scroll-down-icon-image']['url']; $scrdwnicon = $hmd_theme_option['scroll-down-icon-html']; $scrdwntxt = $hmd_theme_option['scroll-down-text']; $scrdwnline = $hmd_theme_option['scroll-down-line']; ?>
+                    <?php if( !empty( $scrdwnimg ) && empty( $scrdwnicon ) ) { ?>
+                        <a href="#content" data-scroll><img src="<?php echo $scrdwnimg ?>" alt="" /></a><br />
+                    <?php } elseif( !empty( $scrdwnicon ) ) { ?>
+                        <a href="#content" data-scroll><i class="<?php echo $scrdwnicon ?>"></i></a>
+                    <?php } if( !empty( $scrdwntxt ) ) { ?>
+                        <a href="#content" class="scroll-text" data-scroll><span><?php echo $scrdwntxt; ?></span></a><br />
+                    <?php } if( ( $scrdwnline ) ) { ?>
+                        <span class="line"></span>
+                    <?php } ?>
+                <!-- end .down-arrow --></div>
             <!-- end .row --></div>
         <!-- end .slider-text --></div>
         <?php $jumboimg = wp_get_attachment_url( get_post_thumbnail_id() ); ?>
@@ -97,7 +97,64 @@
         <!-- end .slider --></div>
         <div class="slider-wash"></div>
     <!-- end .jumbotron --></div>
-<?php } ?>
+<?php elseif ( $slider_opt == 'on' ) : ?>
+    <!-- Jumbotron Information -->
+    <div class="jumbotron" id="other">
+        <div class="slider-text container-fluid">
+            <div class="row" id="slider-text-inner">
+                <div class="col-lg-10 offset-lg-1" id="slider-text-content">
+                    <?php 
+                        $slidertitle = get_post_meta($post->ID, "slidermeta-text", true); 
+                        $sliderimage = get_post_meta($post->ID, "slidermeta-image", true); 
+                        if( !empty( $slidertitle ) && empty( $sliderimage ) ) { 
+                    ?>
+                        <h1 class="slider-title"><?php echo $slidertitle; ?></h1>
+                    <?php } elseif( empty( $slidertitle ) && !empty( $sliderimage ) ) { ?>
+                        <h1 class="slider-title">
+                            <img src="<?php echo $sliderimage; ?>" alt="" class="img-fluid mx-auto" />
+                        <!-- end .slider-title --></h1>
+                    <?php } elseif( !empty( $slidertitle ) && !empty( $sliderimage ) ) { ?>
+                        <h1 class="slider-title">
+                            <img src="<?php echo $sliderimage; ?>" alt="" class="img-fluid mx-auto" />
+                            <?php echo $slidertitle; ?>
+                        <!-- end .slider-title --></h1>
+                    <?php } ?>
+                    <?php 
+                        $slidertext = get_post_meta($post->ID, "slidermeta-textarea", true);
+                        if( $slidertext ) { 
+                    ?>
+                        <p><?php echo $slidertext; ?></p>
+                    <?php } ?>
+                    <?php 
+                        $sliderbutton = get_post_meta($post->ID, "slidermeta-button", true); 
+                        $sliderlink = get_post_meta($post->ID, "slidermeta-link", true); 
+                        if( $sliderbutton ) {
+                    ?>
+                        <a href="<?php echo $sliderlink; ?>" class="btn btn-lg button-success"><?php echo $sliderbutton; ?></a>
+                    <?php } ?>
+                <!-- end .col-lg-10 --></div>
+                <div class="down-arrow">
+                    <?php $scrdwnimg = $hmd_theme_option['scroll-down-icon-image']['url']; $scrdwnicon = $hmd_theme_option['scroll-down-icon-html']; $scrdwntxt = $hmd_theme_option['scroll-down-text']; $scrdwnline = $hmd_theme_option['scroll-down-line']; ?>
+                    <?php if( !empty( $scrdwnimg ) && empty( $scrdwnicon ) ) { ?>
+                        <a href="#content" data-scroll><img src="<?php echo $scrdwnimg ?>" alt="" /></a><br />
+                    <?php } elseif( !empty( $scrdwnicon ) ) { ?>
+                        <a href="#content" data-scroll><i class="<?php echo $scrdwnicon ?>"></i></a>
+                    <?php } if( !empty( $scrdwntxt ) ) { ?>
+                        <a href="#content" class="scroll-text" data-scroll><span><?php echo $scrdwntxt; ?></span></a><br />
+                    <?php } if( ( $scrdwnline ) ) { ?>
+                        <span class="line"></span>
+                    <?php } ?>
+                <!-- end .down-arrow --></div>
+            <!-- end .row --></div>
+        <!-- end .slider-text --></div>
+        <?php $jumboimg = wp_get_attachment_url( get_post_thumbnail_id() ); ?>
+        <div class="slider">
+            <?php $slidername = get_post_meta($post->ID, 'slidermeta-slug', true); ?>
+            <?php if( !empty( $slidername ) ) { echo do_shortcode('[rev_slider alias="' . $slidername . '"]'); } elseif( empty($slidername) && !empty($jumboimg) ) { echo '<div class="jumbotron-img" style="background-image:url(' . $jumboimg . ');"></div>'; } else { } ?>
+        <!-- end .slider --></div>
+        <div class="slider-wash"></div>
+    <!-- end .jumbotron --></div>
+<?php endif; ?>
 
 <!-- Section Container Information -->
 <div class="container-fluid" id="section-container">

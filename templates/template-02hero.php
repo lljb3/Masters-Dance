@@ -42,8 +42,8 @@
 <!-- Jumbotron Information -->
 <div class="jumbotron" id="other">
     <div class="slider-text container-fluid">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1">
+        <div class="row" id="slider-text-inner">
+            <div class="col-lg-10 offset-lg-1" id="slider-text-content">
                 <?php 
                     $slidertitle = get_post_meta($post->ID, "slidermeta-text", true); 
                     $sliderimage = get_post_meta($post->ID, "slidermeta-image", true); 
@@ -73,19 +73,19 @@
                 ?>
                     <a href="<?php echo $sliderlink; ?>" class="btn btn-lg button-success"><?php echo $sliderbutton; ?></a>
                 <?php } ?>
-                <div class="down-arrow">
-                    <?php $scrdwnimg = $hmd_theme_option['scroll-down-icon-image']['url']; $scrdwnicon = $hmd_theme_option['scroll-down-icon-html']; $scrdwntxt = $hmd_theme_option['scroll-down-text']; $scrdwnline = $hmd_theme_option['scroll-down-line']; ?>
-                    <?php if( !empty( $scrdwnimg ) && empty( $scrdwnicon ) ) { ?>
-                        <a href="#content" data-scroll><img src="<?php echo $scrdwnimg ?>" alt="" /></a><br />
-                    <?php } elseif( !empty( $scrdwnicon ) ) { ?>
-                        <a href="#content" data-scroll><i class="<?php echo $scrdwnicon ?>"></i></a>
-                    <?php } if( !empty( $scrdwntxt ) ) { ?>
-                        <a href="#content" class="scroll-text" data-scroll><span><?php echo $scrdwntxt; ?></span></a><br />
-                    <?php } if( ( $scrdwnline ) ) { ?>
-                        <span class="line"></span>
-                    <?php } ?>
-                <!-- end .down-arrow --></div>
             <!-- end .col-lg-10 --></div>
+            <div class="down-arrow">
+                <?php $scrdwnimg = $hmd_theme_option['scroll-down-icon-image']['url']; $scrdwnicon = $hmd_theme_option['scroll-down-icon-html']; $scrdwntxt = $hmd_theme_option['scroll-down-text']; $scrdwnline = $hmd_theme_option['scroll-down-line']; ?>
+                <?php if( !empty( $scrdwnimg ) && empty( $scrdwnicon ) ) { ?>
+                    <a href="#content" data-scroll><img src="<?php echo $scrdwnimg ?>" alt="" /></a><br />
+                <?php } elseif( !empty( $scrdwnicon ) ) { ?>
+                    <a href="#content" data-scroll><i class="<?php echo $scrdwnicon ?>"></i></a>
+                <?php } if( !empty( $scrdwntxt ) ) { ?>
+                    <a href="#content" class="scroll-text" data-scroll><span><?php echo $scrdwntxt; ?></span></a><br />
+                <?php } if( ( $scrdwnline ) ) { ?>
+                    <span class="line"></span>
+                <?php } ?>
+            <!-- end .down-arrow --></div>
         <!-- end .row --></div>
     <!-- end .slider-text --></div>
     <?php $jumboimg = wp_get_attachment_url( get_post_thumbnail_id() ); ?>

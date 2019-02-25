@@ -15,17 +15,17 @@
      * @subpackage 	Starkers
      * @since 		Starkers 4.0
      */
-    global $corp_theme_option; 
-    $trans_opt = $corp_theme_option['transitional-header-button'];
+    global $hmd_theme_option; 
+    $trans_opt = $hmd_theme_option['transitional-header-button'];
     $trans_page_opt = get_post_meta($post->ID,'page_options_trans-header',true);
-    $collapse_opt = $corp_theme_option['collapsable-header-button'];
+    $collapse_opt = $hmd_theme_option['collapsable-header-button'];
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header' ) ); ?>
 
 <!-- Main Information -->
 <main <?php body_class(); ?>>
 
-<?php if ( $trans_page_opt == 1 ) : ?> 
+<?php if ( $trans_page_opt == 'on' ) : ?> 
     <?php if ( $trans_opt ) : ?>
         <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/trans-header' ) ); ?>
     <?php elseif ( $collapse_opt ) : ?>
@@ -74,7 +74,7 @@
                     <a href="<?php echo $sliderlink; ?>" class="btn btn-lg button-success"><?php echo $sliderbutton; ?></a>
                 <?php } ?>
                 <div class="down-arrow">
-                    <?php $scrdwnimg = $corp_theme_option['scroll-down-icon-image']['url']; $scrdwnicon = $corp_theme_option['scroll-down-icon-html']; $scrdwntxt = $corp_theme_option['scroll-down-text']; $scrdwnline = $corp_theme_option['scroll-down-line']; ?>
+                    <?php $scrdwnimg = $hmd_theme_option['scroll-down-icon-image']['url']; $scrdwnicon = $hmd_theme_option['scroll-down-icon-html']; $scrdwntxt = $hmd_theme_option['scroll-down-text']; $scrdwnline = $hmd_theme_option['scroll-down-line']; ?>
                     <?php if( !empty( $scrdwnimg ) && empty( $scrdwnicon ) ) { ?>
                         <a href="#content" data-scroll><img src="<?php echo $scrdwnimg ?>" alt="" /></a><br />
                     <?php } elseif( !empty( $scrdwnicon ) ) { ?>

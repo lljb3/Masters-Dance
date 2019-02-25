@@ -15,10 +15,10 @@
 	 * @subpackage 	Starkers
 	 * @since 		Starkers 4.0
 	 */
-    global $corp_theme_option; 
-    $trans_opt = $corp_theme_option['transitional-header-button'];
+    global $hmd_theme_option; 
+    $trans_opt = $hmd_theme_option['transitional-header-button'];
     $trans_page_opt = get_post_meta($post->ID,'page_options_trans-header',true);
-    $collapse_opt = $corp_theme_option['collapsable-header-button'];
+    $collapse_opt = $hmd_theme_option['collapsable-header-button'];
     $slider_opt = get_post_meta($post->ID,'slidermeta-activate',true);
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header' ) ); ?>
@@ -26,7 +26,7 @@
 <!-- Main Information -->
 <main <?php body_class(); ?>>
 
-<?php if ( $trans_page_opt == 1 ) : ?> 
+<?php if ( $trans_page_opt == 'on' ) : ?> 
     <?php if ( $trans_opt ) : ?>
         <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/trans-header' ) ); ?>
     <?php elseif ( $collapse_opt ) : ?>
@@ -76,7 +76,7 @@
                         <a href="<?php echo $sliderlink; ?>" class="btn btn-lg button-success"><?php echo $sliderbutton; ?></a>
                     <?php } ?>
                     <div class="down-arrow">
-                        <?php $scrdwnimg = $corp_theme_option['scroll-down-icon-image']['url']; $scrdwnicon = $corp_theme_option['scroll-down-icon-html']; $scrdwntxt = $corp_theme_option['scroll-down-text']; $scrdwnline = $corp_theme_option['scroll-down-line']; ?>
+                        <?php $scrdwnimg = $hmd_theme_option['scroll-down-icon-image']['url']; $scrdwnicon = $hmd_theme_option['scroll-down-icon-html']; $scrdwntxt = $hmd_theme_option['scroll-down-text']; $scrdwnline = $hmd_theme_option['scroll-down-line']; ?>
                         <?php if( !empty( $scrdwnimg ) && empty( $scrdwnicon ) ) { ?>
                             <a href="#section-container" data-scroll><img src="<?php echo $scrdwnimg ?>" alt="" /></a><br />
                         <?php } elseif( !empty( $scrdwnicon ) ) { ?>
@@ -134,13 +134,13 @@
 <!-- end #content --></div>
 
 <!-- Blog Section Info -->
-<?php if( $corp_theme_option['content-posts-section-page-container'] ) : ?>
+<?php if( $hmd_theme_option['content-posts-section-page-container'] ) : ?>
     <section class="container-fluid section" id="blog-section">
         <div class="row" id="posts-section">
             <?php // Display blog posts on any page @ http://m0n.co/l
                 $temp = $wp_query; $wp_query = null;
-                $postsno = $corp_theme_option['blog-posts-number-of'];
-                $cat_array = $corp_theme_option['blog-posts-category'];
+                $postsno = $hmd_theme_option['blog-posts-number-of'];
+                $cat_array = $hmd_theme_option['blog-posts-category'];
                 $categories = str_replace(', ','+',$cat_array);
                 $wp_query = new WP_Query(); 
                 $wp_query->query( 'showposts=' . $postsno . '&paged='. $paged . '&category_name=' . $categories );

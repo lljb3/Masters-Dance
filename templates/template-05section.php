@@ -15,10 +15,10 @@
 	 * @subpackage 	Starkers
 	 * @since 		Starkers 4.0
 	 */
-	global $corp_theme_option;
-	$trans_opt = $corp_theme_option['transitional-header-button'];
+	global $hmd_theme_option;
+	$trans_opt = $hmd_theme_option['transitional-header-button'];
 	$trans_page_opt = get_post_meta($post->ID,'page_options_trans-header',true);
-	$collapse_opt = $corp_theme_option['collapsable-header-button'];
+	$collapse_opt = $hmd_theme_option['collapsable-header-button'];
     $post_slug = $post->post_name;
     $section_bg = wp_get_attachment_url( get_post_thumbnail_id() );
 ?>
@@ -27,7 +27,7 @@
 <!-- Main Information -->
 <main <?php body_class(); ?>>
 
-<?php if ( $trans_page_opt == 1 ) : ?> 
+<?php if ( $trans_page_opt == 'on' ) : ?> 
     <?php if ( $trans_opt ) : ?>
         <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/trans-header' ) ); ?>
     <?php elseif ( $collapse_opt ) : ?>

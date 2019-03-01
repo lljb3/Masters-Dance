@@ -55,5 +55,5 @@
 <?php if( $hmd_theme_option['pjax-loader'] ) : ?>
 	<!-- Start BarbaJS -->
 	<div id="barba-wrapper">
-		<div class="barba-container">
+		<div class="barba-container" data-namespace="barba-container">
 <?php endif; ?>

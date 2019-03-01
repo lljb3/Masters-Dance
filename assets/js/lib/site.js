@@ -85,8 +85,8 @@
 		$('.jumbotron').css('min-height', windowHeight - headerHeight);
 		$('.jumbotron .slider').css('min-height', windowHeight - headerHeight);
 		$('.jumbotron .slider-text #slider-text-inner').css('min-height', windowHeight - headerHeight);
+		console.log('This setHeight script ran.');
 	}
-	setHeight();
 	// Window Resize			
 	$(window).resize(function() {
 		setHeight();
@@ -181,5 +181,61 @@
 		updateURL: false,
 		popstate: true,
 	});
+
+    // BarbaJS
+    var FadeTransition = Barba.BaseTransition.extend({
+        start: function() {
+            Promise
+            .all([this.newContainerLoading, this.fadeOut()])
+            .then(this.fadeIn.bind(this));
+        },
+        fadeOut: function() {
+            return $(this.oldContainer).animate({ opacity: 0 }).promise();
+        },
+        fadeIn: function() {
+            var _this = this;
+            var $el = $(this.newContainer);
+            $(this.oldContainer).hide();
+            $el.css({
+                visibility : 'visible',
+                opacity : 0
+            });
+            $el.animate({ opacity: 1 }, 400, function() {
+                _this.done();
+            });
+        },
+    });
+    Barba.Pjax.getTransition = function() {
+        return FadeTransition;
+    };
+    var BarbaContainer = Barba.BaseView.extend({
+        namespace: 'barba-container',
+        onLeave: function() {
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function() {
+            // The Container has just been removed from the DOM.
+        },
+        onEnter: function() {
+            // The new Container is ready and attached to the DOM.
+            setHeight();
+            stickyHeader();
+            navbarTrans();
+            navbarDropdown();
+            flowtypeJS();
+            toTop();
+        },
+        onEnterCompleted: function() {
+			// The Transition has just finished.
+			addBlacklistHash();
+			addBlacklistHash();
+            externalLinkage();
+            FacebookAPI();
+            twitterAPI();
+        },
+    });
+    BarbaContainer.init();
+    Barba.Pjax.start();
+    Barba.Prefetch.init();
 						
 })(jQuery, window, document);

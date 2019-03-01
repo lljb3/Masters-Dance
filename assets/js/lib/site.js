@@ -85,7 +85,6 @@
 		$('.jumbotron').css('min-height', windowHeight - headerHeight);
 		$('.jumbotron .slider').css('min-height', windowHeight - headerHeight);
 		$('.jumbotron .slider-text #slider-text-inner').css('min-height', windowHeight - headerHeight);
-		console.log('This setHeight script ran.');
 	}
 	// Window Resize			
 	$(window).resize(function() {

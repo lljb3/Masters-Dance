@@ -110,12 +110,15 @@
             <?php if( $hmd_theme_option['content-posts-container'] ) { ?>
                 <div class="row" id="posts-section">
                     <?php // Display blog posts on any page @ http://m0n.co/l
-                    $temp = $wp_query; $wp_query = null;
-                    $postsno = $hmd_theme_option['blog-posts-number-of'];
-                    $cat_array = $hmd_theme_option['blog-posts-category'];
-                    $categories = str_replace(', ','+',$cat_array);
-                    $wp_query = new WP_Query(); $wp_query->query('showposts=' . $postsno . '&paged='. $paged . '&category_name=' . $categories);
-                    while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+                        $temp = $wp_query; 
+                        $wp_query = null;
+                        $postsno = $hmd_theme_option['blog-posts-number-of'];
+                        $cat_array = $hmd_theme_option['blog-posts-category'];
+                        $categories = str_replace(', ','+',$cat_array);
+                        $wp_query = new WP_Query(); 
+                        $wp_query->query('showposts=' . $postsno . '&paged='. $paged . '&category_name=' . $categories);
+                        while ($wp_query->have_posts()) : $wp_query->the_post();
+                    ?>
                     <?php if( $postsno == 4 || $postsno == 8 ) { ?>
                         <div class="col-lg-3">
                     <?php } else { ?>

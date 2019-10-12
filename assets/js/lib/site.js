@@ -110,7 +110,7 @@
 			if (window.location.href.indexOf('/wp-admin') !== -1 ||
 			window.location.href.indexOf('/wp-login.php') !== -1 ||
 			window.location.href.indexOf('/shop') !== -1) {
-				$(this).addClass('nosmoothstate');
+				$(this).addClass('no-barba');
 			}
 		});
 	}

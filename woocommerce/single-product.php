@@ -15,7 +15,6 @@
      * @package 	WooCommerce/Templates
      * @version     1.6.4
      */
-
     if ( ! defined( 'ABSPATH' ) ) {
         exit; // Exit if accessed directly
     }
@@ -29,7 +28,7 @@
 <!-- Main Information -->
 <main <?php body_class(); ?>>
 
-<?php if ( $trans_page_opt == 1 ) : ?> 
+<?php if ( $trans_page_opt == 'on' ) : ?> 
     <?php if ( $trans_opt ) : ?>
         <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/trans-header' ) ); ?>
     <?php elseif ( $collapse_opt ) : ?>

@@ -24,8 +24,10 @@ module.exports = {
         jquery: 'jQuery'
     },
     optimization: {
+        minimize: true,
         minimizer: [
             new UglifyJsPlugin({
+                include: /\.min\.js$/,
                 cache: true,
                 parallel: true,
                 extractComments: true,

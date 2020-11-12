@@ -295,7 +295,7 @@
 
                             case 'text':
                                 if ( isset( $option['data'] ) && $option['data'] ) {
-                                    continue;
+                                    continue 2;
                                 }
                                 $wp_customize->add_control( $option['id'], array(
                                     'label'    => $option['title'],
@@ -308,7 +308,7 @@
 
                             case 'select':
                                 if ( ( isset( $option['sortable'] ) && $option['sortable'] ) ) {
-                                    continue;
+                                    continue 2;
                                 }
                                 $wp_customize->add_control( $option['id'], array(
                                     'label'    => $option['title'],
@@ -321,7 +321,7 @@
                                 break;
 
                             case 'radio':
-                                //continue;
+                                //continue 2;
                                 $wp_customize->add_control( $option['id'], array(
                                     'label'    => $option['title'],
                                     'section'  => $section['id'],
@@ -334,7 +334,7 @@
 
                             case 'checkbox':
                                 if ( ( isset( $option['data'] ) && $option['data'] ) || ( ( isset( $option['multi'] ) && $option['multi'] ) ) || ( ( isset( $option['options'] ) && ! empty( $option['options'] ) ) ) ) {
-                                    continue;
+                                    continue 2;
                                 }
                                 $wp_customize->add_control( $option['id'], array(
                                     'label'    => $option['title'],
@@ -346,7 +346,7 @@
                                 break;
 
                             case 'media':
-                                continue;
+                                continue 2;
                                 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $option['id'], array(
                                     'label'    => $option['title'],
                                     'section'  => $section['id'],
@@ -365,7 +365,7 @@
                                 break;
 
                             case 'switch':
-                                continue;
+                                continue 2;
                                 $wp_customize->add_control( new Redux_customizer_switch( $wp_customize, $option['id'], array(
                                     'label'          => $option['title'],
                                     'section'        => $section['id'],
